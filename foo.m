@@ -1,2 +1,3 @@
 function f = foo(bar)
-% hello
+%foo: hello
+f = -1
