@@ -1,3 +1,4 @@
 function f = foo(bar)
-%foo: hello
+%bar: hello
 f = -1
+g = f^2
