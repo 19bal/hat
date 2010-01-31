@@ -45,8 +45,8 @@ for i=1:fsz
     data_kapali  = tmp.data(T_KAPALI:(T_SERBEST-1), 2);
     data_serbest = tmp.data((T_SERBEST) :(T_SERBEST+length(data_kapali) - 1), 2);
     
-    data.X(:, i) = data_kapali';    data.y(i) = KAPALI;  
-    data.X(:, i) = data_serbest';   data.y(i) = SERBEST;
+    j = j + 1;  data.X(:, j) = data_kapali';    data.y(j) = KAPALI;
+    j = j + 1;  data.X(:, j) = data_serbest';   data.y(j) = SERBEST;
  
     if dbg
         subplot(211),   plot(tmp.data(:,1));    axis([0 dsz -2 2]);  grid on;
