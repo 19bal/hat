@@ -2,8 +2,8 @@ function savedb(dbnm, data)
 curdir = pwd;
 cd(dbnm)
 if strfind(dbnm, 'train') 
-    save EmgTrnData data;
+    save EmgTrnDataBinary data;
 else
-    save EmgTstData data
+    save EmgTstDataBinary data
 end
 cd(curdir);

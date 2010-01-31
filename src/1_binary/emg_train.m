@@ -2,7 +2,7 @@
 clc;    close all;  clear all;
 
 DB_ROOT = '/home/nurettins/proje/db/emg/4hareket/islenmis/';
-dbfnm = strcat(DB_ROOT, dos2lin('train\EmgTrnData.mat'));
+dbfnm = strcat(DB_ROOT, dos2lin('train\EmgTrnDataBinary.mat'));
 load(dbfnm);
 
 feature = feature_extraction(data);
