@@ -34,35 +34,32 @@ fsz = length(DIR);
 j = 0;
 
 for k=1:KANAL_SAYISI,
- for i=1:fsz,
-    fnm = strcat(dbnm, DIR(i).name);
-    tmp = load(fnm);
-    
-    % TUM durumlarin koordinatlarini al
-    % bu dosyanin girisindeki aciklamayi oku
-    dsz = size(tmp.data, 1);
-    W = floor(dsz/HAREKET_SAYISI);
-    T_YUKARI  = 0 * W + 1;
-    T_ASAGI   = 1 * W + 1;
-    T_KAPALI  = 2 * W + 1;
-    T_SERBEST = 3 * W + 1;
-    
-    data_yukari  = tmp.data(T_YUKARI  : (T_ASAGI-1), k); 
-    data_asagi   = tmp.data(T_ASAGI   : (T_ASAGI   + length(data_yukari) - 1), k);
-    data_kapali  = tmp.data(T_KAPALI  : (T_KAPALI  + length(data_yukari) - 1), k);
-    data_serbest = tmp.data(T_SERBEST : (T_SERBEST + length(data_yukari) - 1), k);
+     for i=1:fsz,
+        fnm = strcat(dbnm, DIR(i).name);
+        tmp = load(fnm);
 
-    j = j + 1;  data.X(:, j) = data_yukari';      data.y(j) = YUKARI;
-    j = j + 1;  data.X(:, j) = data_asagi';       data.y(j) = ASAGI;  
-    j = j + 1;  data.X(:, j) = data_kapali';      data.y(j) = KAPALI;
-    j = j + 1;  data.X(:, j) = data_serbest';     data.y(j) = SERBEST; 
- end
-    if k==1
-        kanal.k1=data;
-      j = 0;
-    else
-        kanal.k2=data;
-    end
+        % TUM durumlarin koordinatlarini al
+        % bu dosyanin girisindeki aciklamayi oku
+        dsz = size(tmp.data, 1);
+        W = floor(dsz/HAREKET_SAYISI);
+        T_YUKARI  = 0 * W + 1;
+        T_ASAGI   = 1 * W + 1;
+        T_KAPALI  = 2 * W + 1;
+        T_SERBEST = 3 * W + 1;
+
+        data_yukari  = tmp.data(T_YUKARI  : (T_ASAGI-1),                           k); 
+        data_asagi   = tmp.data(T_ASAGI   : (T_ASAGI   + length(data_yukari) - 1), k);
+        data_kapali  = tmp.data(T_KAPALI  : (T_KAPALI  + length(data_yukari) - 1), k);
+        data_serbest = tmp.data(T_SERBEST : (T_SERBEST + length(data_yukari) - 1), k);
+
+        j = j + 1;  data.X(:, j) = data_yukari';      data.y(j) = YUKARI;
+        j = j + 1;  data.X(:, j) = data_asagi';       data.y(j) = ASAGI;  
+        j = j + 1;  data.X(:, j) = data_kapali';      data.y(j) = KAPALI;
+        j = j + 1;  data.X(:, j) = data_serbest';     data.y(j) = SERBEST; 
+     end
+     
+     kanal{k} = data;
+     j = 0;
      
     if dbg
         subplot(511),   plot(tmp.data(:,2));                    grid on;    axis([0 dsz -2 2]);  

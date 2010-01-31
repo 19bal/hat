@@ -1,9 +1,9 @@
 function savedb(dbnm, data)
-% curdir = pwd;
-% cd(dbnm)
+curdir = pwd;
+cd(dbnm)
 if strfind(dbnm, 'train') 
-    save EmgTrnData data;
+    save EmgTrnDataMulti data;
 else
-    save EmgTstData data;
+    save EmgTstDataMulti data;
 end
-% cd(curdir);
+cd(curdir);

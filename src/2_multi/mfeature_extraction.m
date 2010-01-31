@@ -1,5 +1,15 @@
-function [feature] = mfeature_extraction(data)
+function [feature] = mfeature_extraction(data, KANAL_SAYISI)
 
+fk = feature_extraction(data{1});
+feature.X = fk.X;
+feature.y = fk.y;
+
+for k=2:KANAL_SAYISI,
+    fk = feature_extraction(data{2});
+    feature.X = [feature.X; fk.X];
+end
+
+function [feature] = feature_extraction(data)
 
 sz = size(data.X, 2);
 for i=1:sz
@@ -14,12 +24,12 @@ end
 
 function ff = preprocessing(X)
 
-%EMG verisindeki DC Offsetin kaldýrýlmasý
+%EMG verisindeki DC Offsetin kald?r?lmas?
 
 rec_X = abs(X); 
 rec_X = rec_X - mean(rec_X);
 
-%sinyalin zarfýný çýkarmak için sinyal filtrelenecektir.
+%sinyalin zarf?n? ??karmak i?in sinyal filtrelenecektir.
 
 [b, a] = butter(5, [5 300]/(0.5*length(X)));
 filter_X = filtfilt(b, a, rec_X); 
