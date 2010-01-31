@@ -35,15 +35,15 @@ for i=1:fsz
     tmp = load(fnm);
     
     % kapali ve serbest durumlarin koordinatlarini al
-    % dosyanin girisindeki aciklamayi oku
+    % bu dosyanin girisindeki aciklamayi oku
     dsz = size(tmp.data, 1);
     W = floor(dsz/HAREKET_SAYISI);
     T_KAPALI  = 2 * W + 1;
     T_SERBEST = 3 * W + 1;
 
     
-    data_kapali  = tmp.data(T_KAPALI:(T_SERBEST-1), 2);
-    data_serbest = tmp.data((T_SERBEST) :(T_SERBEST+length(data_kapali) - 1), 2);
+    data_kapali  = tmp.data(T_KAPALI  : (T_SERBEST-1),                       2);
+    data_serbest = tmp.data(T_SERBEST : (T_SERBEST+length(data_kapali) - 1), 2);
     
     j = j + 1;  data.X(:, j) = data_kapali';    data.y(j) = KAPALI;
     j = j + 1;  data.X(:, j) = data_serbest';   data.y(j) = SERBEST;
