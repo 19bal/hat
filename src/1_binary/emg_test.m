@@ -1,8 +1,7 @@
 % data = emg_dataset();
 clc;    close all;  clear all;
 
-DB_ROOT = '/home/nurettins/proje/db/emg/4hareket/islenmis/';
-dbfnm = strcat(DB_ROOT, dos2lin('test\EmgTstDataBinary.mat'));
+dbfnm = strrep('data\test\EmgTstDataBinary.mat', '\', filesep);
 load(dbfnm);
 
 feature = feature_extraction(data);

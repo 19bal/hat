@@ -9,9 +9,8 @@ function veri = emg_dataset();
 %    `DB_ROOT/readme` dosyasina bakin
 HAREKET_SAYISI = 4;
 
-DB_ROOT = '/home/nurettins/proje/db/emg/4hareket/islenmis/';
-dbtrnm  = strcat(DB_ROOT, dos2lin('train\'));
-dbtstnm = strcat(DB_ROOT, dos2lin('test\'));
+dbtrnm  = strrep('data\train\', '\', filesep);
+dbtstnm = strrep('data\test\',  '\', filesep);
 
 dbg = false;
 emg_dataset2(dbtrnm,  HAREKET_SAYISI, dbg);

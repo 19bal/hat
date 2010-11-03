@@ -1,6 +1,6 @@
 % data = emg_dataset();
 % clc;    close all;  clear all;
-dbfnm = 'data\test\EmgTstData.mat';
+dbfnm = strrep('data\test\EmgTstData.mat', '\', filesep);
 load(dbfnm);
 
 feature = feature_extraction(data);
