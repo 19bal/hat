@@ -1,7 +1,7 @@
 % data = emg_dataset();
 clc;    close all;  clear all;
 
-dbfnm = strrep('data\test\EmgTrnDataBinary.may', '\', filesep);
+dbfnm = strrep('data\train\EmgTrnDataBinary.mat', '\', filesep);
 load(dbfnm);
 
 feature = feature_extraction(data);

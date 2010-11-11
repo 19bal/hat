@@ -1,6 +1,6 @@
 % data = emg_dataset();
 % clc;    close all;  clear all;
-dbfnm = strrep('data\test\EmgTstData.mat', '\', filesep);
+dbfnm = strrep('data\test\EmgTstDataBinary.mat', '\', filesep);
 load(dbfnm);
 
 feature = feature_extraction(data);
@@ -14,7 +14,7 @@ y = svmclass(feature.X, model);
 sz = length(data.X(1,:));
 
 for i = 1:sz
-    fid = fopen('E:\proje\cesitli\python\matlab_haberlesme\test.txt', 'a');
+    fid = fopen('C:\Users\Shouldbe\Desktop\deneme1\19bal-svm-f65ed48\src\1_binary\test.txt', 'a');
     X = data.X(:, i);
     plot(X);    title(data.Etiket(y(i)));
     xlabel('Time'); ylabel('Amplitude');
