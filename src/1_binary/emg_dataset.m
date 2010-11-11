@@ -9,8 +9,8 @@ function veri = emg_dataset();
 %    `DB_ROOT/readme` dosyasina bakin
 HAREKET_SAYISI = 4;
 
-dbtrnm  = strrep('data\train\', '\', filesep);
-dbtstnm = strrep('data\test\',  '\', filesep);
+dbtrnm  = strrep('..\..\..\data\train\', '\', filesep);
+dbtstnm = strrep('..\..\..\data\test\',  '\', filesep);
 
 dbg = false;
 emg_dataset2(dbtrnm,  HAREKET_SAYISI, dbg);
