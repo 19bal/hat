@@ -13,7 +13,7 @@ burada
 
 3. matlab'la `csv` dosyayı aç ve çizdir
 
-4. `csv2mat`: ``*.csv` dosyasını `*.mat` olarak `_db/mat/` klasörüne kaydet
+4. `csv2mat`: ``*.csv` dosyasını genlik değerleri `data.X` ve zaman değerleri `data.t` formunda şekillendirerek `*.mat` olarak `_db/mat/` klasörüne kaydet
 
 5. `.hea` içeriğini göster
 

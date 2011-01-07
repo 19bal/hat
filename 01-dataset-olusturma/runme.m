@@ -14,10 +14,12 @@ for i=1:sz
     dnm = DIR(i).name;
     dfnm = strcat(dbnm, dnm);
     
-    data = csvread(dfnm)';
+    ham = csvread(dfnm)';
+    data.t = ham(:, 1);
+    data.X = ham(:, 2);
     
     if dbg,
-        figure(1),  plot(data(:,1), data(:,2));
+        figure(1),  plot(data.t, data.X);
     end
     
     [t, nm] = fileparts(dnm);
