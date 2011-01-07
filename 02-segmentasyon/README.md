@@ -4,6 +4,6 @@ burada
 
 2. segmenları elde et
 
-3. `data.X` formunda şekillendir
+3. zaman değerleri `segmen(j).t` ve genlik değerleri `segmen(j).X` olacak biçimde şekillendir
 
-4. `_db/` klasörüne `segmen.mat olarak kaydet
+4. `segmen` değişkenini `_db/` klasörüne `segmen.mat olarak kaydet
