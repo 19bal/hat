@@ -27,20 +27,20 @@ KAPALI  = 1;
 SERBEST = 2;
 
 % dosya paterni ('m*.mat') icin `DB_ROOT/readme` bakin
-DIR = dir(strcat(dbnm, 'm*.mat'));
+DIR = dir(strcat(dbnm, 'a*.mat'));
 fsz = length(DIR);
 j = 0;
 
 for i=1:fsz
     fnm = strcat(dbnm, DIR(i).name);
-    tmp = load(fnm);
+    tmp = load(fnm)
     
     % kapali ve serbest durumlarin koordinatlarini al
     % bu dosyanin girisindeki aciklamayi oku
-    dsz = size(tmp.data, 1);
-    W = floor(dsz/HAREKET_SAYISI);
-    T_KAPALI  = 2 * W + 1;
-    T_SERBEST = 3 * W + 1;
+    dsz = size(tmp.data, 1)
+    W = floor(dsz/HAREKET_SAYISI)
+    T_KAPALI  = 2 * W + 1
+    T_SERBEST = 3 * W + 1
 
     
     data_kapali  = tmp.data(T_KAPALI  : (T_SERBEST-1),                       2);
