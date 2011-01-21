@@ -2,12 +2,15 @@
 clear all;  close all;  clc;
 
 dbg = true;
-dbnm     = pathos('_db/orj/');      % emg sinyalini bu klasore koy
+dbnm     = pathos('_db/orj/');      
 dbnm_mat = pathos('_db/mat/');      mkdir(dbnm_mat);
 
 DIR = dir(strcat(dbnm, '*.csv'));
-
 sz = length(DIR);
+
+if sz == 0,
+    error(sprintf('"%s" icerigi bos. README.md yi oku.\n', dbnm));
+end
 
 for i=1:sz
     if dbg, fprintf('%d. veri isleniyor...\n', i);   end
