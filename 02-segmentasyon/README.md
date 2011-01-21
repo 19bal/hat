@@ -1,6 +1,6 @@
-burada 
+burada
 
-1. 01-dataset-olusturma aşaması `_db/mat/` klasöründen `*.mat` dosyasını burada aynen oluştur
+1. 01-dataset-olusturma aşaması `_db/mat/` klasöründen `*.mat` dosyasına kopyala
 
 2. segmenları elde et
 
