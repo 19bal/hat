@@ -4,4 +4,4 @@ Makale çevirileri vs
 
 #### Okuma Listesi
 
-- 
+-hanife usta deneme 
