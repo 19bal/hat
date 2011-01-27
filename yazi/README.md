@@ -1,7 +1,7 @@
-Makale çevirileri vs
+﻿Makale çevirileri vs
 
 - kocer10: "makale isti"
 
 #### Okuma Listesi
 
--hanife usta deneme 
+-hanife usta deneme 1
